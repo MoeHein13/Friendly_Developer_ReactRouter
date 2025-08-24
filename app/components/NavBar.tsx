@@ -13,7 +13,7 @@ const NavBar = () => {
     setMenuOpen((prev) => !prev);
   };
   const renderResponsiveMenu = (
-    <div className="bg-gray-600 p-4 ">
+    <div className="bg-gray-600 p-4 md:hidden">
       <div className="space-x-3 text-gray-300 text-sm flex justify-between ">
         <NavLink
           to="/"
@@ -50,7 +50,7 @@ const NavBar = () => {
   );
   return (
     <>
-      <nav className="bg-gray-800 border-gray-400 px-4 py-4 flex justify-between sticky items-center">
+      <nav className="bg-gray-800 border-gray-400 px-4 py-4 flex justify-between sticky items-center top-0 z-50">
         <NavLink
           to="/"
           className="flex items-center space-x-2 text-lg font-bold text-blue-300"
@@ -96,7 +96,7 @@ const NavBar = () => {
         {menuOpen ? (
           <ImCross
             onClick={handleClickMenu}
-            className="text-blue-400 cursor-pointer"
+            className="text-blue-400 cursor-pointer md:hidden"
           />
         ) : (
           <FaBars
