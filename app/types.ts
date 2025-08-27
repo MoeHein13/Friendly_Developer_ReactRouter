@@ -4,4 +4,6 @@ export type ProjectType = {
   description: string;
   image: string;
   url: string;
+  category: string;
+  date: string;
 };
