@@ -4,8 +4,11 @@ import type { ProjectType } from "~/types";
 const ProjectList = ({ project }: { project: ProjectType }) => {
   return (
     <div>
-      <Link to={project.id}>
-        <div className="border border-gray-600 rounded-lg -blue-800 overflow-hidden shadow-sm hover:shadow-md  ">
+      <Link
+        to={project.id}
+        className=" translate transition duration-300 hover:scale-[1.02] block"
+      >
+        <div className="border border-gray-600 rounded-lg  transition duration-300  overflow-hidden shadow-sm hover:shadow-md  ">
           <img
             src={project.image}
             alt={project.title}
