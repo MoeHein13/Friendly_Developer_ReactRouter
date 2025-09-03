@@ -6,7 +6,7 @@ const ProjectList = ({ project }: { project: ProjectType }) => {
     <div>
       <Link
         to={project.id}
-        className=" translate transition duration-300 hover:scale-[1.02] block"
+        className=" block translate transition duration-300 hover:scale-[1.02] "
       >
         <div className="border border-gray-600 rounded-lg  transition duration-300  overflow-hidden shadow-sm hover:shadow-md  ">
           <img
