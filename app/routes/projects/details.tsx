@@ -47,7 +47,7 @@ export const ProjectDetailPage = ({ loaderData }: Route.ComponentProps) => {
           </p>
           <p className="text-gray-300 mb-4">{project.category}</p>
 
-          <div className="mb-2">{project.description}</div>
+          <div className="mb-4">{project.description}</div>
 
           <a
             href={project.url}
