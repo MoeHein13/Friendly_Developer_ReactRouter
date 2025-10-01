@@ -1,7 +1,12 @@
 import React from "react";
 import { Link } from "react-router";
 
-const Hero = (
+type HeroType = {
+  name?: string;
+  text?: string;
+};
+
+const Hero: React.FC<HeroType> = (
   { name = "[NAME]" },
   text = " A mechanical engineering graduate who loves web development and building friendly web experience"
 ) => {
