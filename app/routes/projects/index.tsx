@@ -25,24 +25,6 @@ const Project = ({ loaderData }: Route.ComponentProps) => {
   const indexOfFirst = indexOfLast - projectPerPage;
   const currentProjects = projects.slice(indexOfFirst, indexOfLast);
 
-  // const renderPagination = (
-  //   <div className="flex items-center justify-center gap-2 mt-8">
-  //     {Array.from({ length: totalPage }, (_, indx) => (
-  //       <button
-  //         key={indx + 1}
-  //         className={`py-1 px-2 rounded cursor-pointer ${
-  //           currentPage === indx + 1
-  //             ? "bg-blue-700 text-white"
-  //             : "bg-gray-700 text-gray-200"
-  //         }`}
-  //         onClick={() => setCurrentPage(indx + 1)}
-  //       >
-  //         {indx + 1}
-  //       </button>
-  //     ))}
-  //   </div>
-  // );
-
   return (
     <>
       <h1 className=" font-semibold text-white text-3xl">Projects 🚀</h1>
