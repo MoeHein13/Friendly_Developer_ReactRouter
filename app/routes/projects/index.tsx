@@ -16,18 +16,44 @@ const Project = ({ loaderData }: Route.ComponentProps) => {
   const { projects } = loaderData as { projects: ProjectType[] };
   console.log(projects);
 
-  const [currentPage, setCurrentPage] = useState(1);
-  const projectPerPage = 2;
+  const [selecetedCategory, setSelectedCategory] = useState("All");
 
-  const totalPage = projects.length / projectPerPage;
+  const categories = ["All", ...new Set(projects.map((proj) => proj.category))];
+  console.log(categories);
+
+  const filterProjects =
+    selecetedCategory === "All"
+      ? projects
+      : projects.filter((proj) => proj.category === selecetedCategory);
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const projectPerPage = 10;
+
+  const totalPage = filterProjects.length / projectPerPage;
 
   const indexOfLast = currentPage * projectPerPage;
   const indexOfFirst = indexOfLast - projectPerPage;
-  const currentProjects = projects.slice(indexOfFirst, indexOfLast);
+  const currentProjects = filterProjects.slice(indexOfFirst, indexOfLast);
 
   return (
     <>
       <h1 className=" font-semibold text-white text-3xl">Projects 🚀</h1>
+
+      <div className="flex justfy-content items-center gap-2 my-3">
+        {categories.map((category) => (
+          <button
+            key={category}
+            onClick={() => {
+              setSelectedCategory(category);
+              setCurrentPage(1);
+            }}
+            className={`p-2 rounded-xl text-sm cursor-pointer
+               text-gray-200 ${selecetedCategory === category ? "bg-blue-800" : "bg-gray-700"}`}
+          >
+            {category}
+          </button>
+        ))}
+      </div>
       <div className="mt-4 grid gap-6 sm:grid-cols-2">
         {currentProjects.map((project) => (
           <ProjectList key={project.id} project={project} />
