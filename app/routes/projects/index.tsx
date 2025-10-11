@@ -7,7 +7,7 @@ import Pagination from "~/components/Pagination";
 export const loader = async ({
   request,
 }: Route.LoaderArgs): Promise<{ projects: ProjectType[] }> => {
-  const response = await fetch("http://localhost:8000/projects");
+  const response = await fetch(`${import.meta.env.VITE_API_URL}/projects`);
   const data = await response.json();
   return { projects: data };
 };
