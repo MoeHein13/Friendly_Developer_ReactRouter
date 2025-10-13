@@ -6,4 +6,5 @@ export type ProjectType = {
   url: string;
   category: string;
   date: string;
+  featured: boolean;
 };
